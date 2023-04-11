@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:state_management/provider/count_provider.dart';
+import 'package:state_management/provider/favourite_provider.dart';
 import 'package:state_management/provider/slider_provider.dart';
-import 'package:state_management/view/slider.dart';
 import 'view/home_screen.dart';
 
 void main() {
@@ -18,8 +18,9 @@ class StateManagement extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<CountProvider>(create: (_) => CountProvider()),
         ChangeNotifierProvider<SliderProvider>(create: (_) => SliderProvider()),
+        ChangeNotifierProvider<FavouriteProvider>(create: (_) => FavouriteProvider()),
       ],
-      child: MaterialApp(
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: HomeScreen(),
       ),
