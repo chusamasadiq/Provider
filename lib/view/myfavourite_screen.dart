@@ -11,7 +11,6 @@ class MyFavouriteScreen extends StatefulWidget {
 }
 
 class _MyFavouriteScreenState extends State<MyFavouriteScreen> {
-  //List<int> selectedItems = [];
 
   @override
   Widget build(BuildContext context) {

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:state_management/provider/count_provider.dart';
 import 'package:state_management/provider/favourite_provider.dart';
 import 'package:state_management/provider/slider_provider.dart';
+import 'package:state_management/provider/themechange_provider.dart';
 import 'view/home_screen.dart';
 
 void main() {
@@ -19,10 +20,29 @@ class StateManagement extends StatelessWidget {
         ChangeNotifierProvider<CountProvider>(create: (_) => CountProvider()),
         ChangeNotifierProvider<SliderProvider>(create: (_) => SliderProvider()),
         ChangeNotifierProvider<FavouriteProvider>(create: (_) => FavouriteProvider()),
+        ChangeNotifierProvider<ThemeChangerProvider>(create: (_) => ThemeChangerProvider()),
       ],
-      child: const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
+      child: Builder(
+        builder: (BuildContext context){
+          final themeProvider = Provider.of<ThemeChangerProvider>(context);
+          return MaterialApp(
+            themeMode: themeProvider.themeMode,
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              brightness: Brightness.light,
+              primarySwatch: Colors.red
+            ),
+            darkTheme: ThemeData(
+              brightness: Brightness.dark,
+              primarySwatch: Colors.green,
+                appBarTheme: const AppBarTheme(
+                backgroundColor: Colors.green,
+            )
+            ),
+            home: const HomeScreen(),
+          );
+        }
+
       ),
     );
   }

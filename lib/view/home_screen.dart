@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:state_management/view/favourite_screen.dart';
 import 'package:state_management/view/slider.dart';
+import 'package:state_management/view/theme_screen.dart';
 
 import '../provider/count_provider.dart';
 
@@ -60,6 +61,18 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             },
             child: const Text('Go to Favourite Screen'),
+          ),
+
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ThemeScreen(),
+                ),
+              );
+            },
+            child: const Text('Go to Theme Screen'),
           )
         ],
       ),
