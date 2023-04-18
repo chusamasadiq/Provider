@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:state_management/provider/count_provider.dart';
 import 'package:state_management/provider/favourite_provider.dart';
 import 'package:state_management/provider/slider_provider.dart';
+import 'package:state_management/provider/switch_provider.dart';
 import 'package:state_management/provider/themechange_provider.dart';
 import 'view/home_screen.dart';
 
@@ -21,6 +22,7 @@ class StateManagement extends StatelessWidget {
         ChangeNotifierProvider<SliderProvider>(create: (_) => SliderProvider()),
         ChangeNotifierProvider<FavouriteProvider>(create: (_) => FavouriteProvider()),
         ChangeNotifierProvider<ThemeChangerProvider>(create: (_) => ThemeChangerProvider()),
+        ChangeNotifierProvider<SwitchProvider>(create: (_) => SwitchProvider()),
       ],
       child: Builder(
         builder: (BuildContext context){

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:state_management/view/favourite_screen.dart';
 import 'package:state_management/view/slider.dart';
 import 'package:state_management/view/statless_screen.dart';
+import 'package:state_management/view/switch_screen.dart';
 import 'package:state_management/view/theme_screen.dart';
 
 import '../provider/count_provider.dart';
@@ -86,7 +87,20 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             },
             child: const Text('Go to Stateless Screen'),
-          )
+          ),
+
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SwitchScreen(),
+                ),
+              );
+            },
+            child: const Text('Go to Theme Switch Page'),
+          ),
+
         ],
       ),
       floatingActionButton: Consumer<CountProvider>(
