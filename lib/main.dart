@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:state_management/provider/auth_provider.dart';
 import 'package:state_management/provider/count_provider.dart';
 import 'package:state_management/provider/favourite_provider.dart';
 import 'package:state_management/provider/slider_provider.dart';
@@ -23,6 +24,7 @@ class StateManagement extends StatelessWidget {
         ChangeNotifierProvider<FavouriteProvider>(create: (_) => FavouriteProvider()),
         ChangeNotifierProvider<ThemeChangerProvider>(create: (_) => ThemeChangerProvider()),
         ChangeNotifierProvider<SwitchProvider>(create: (_) => SwitchProvider()),
+        ChangeNotifierProvider<AuthProvider>(create: (_) => AuthProvider()),
       ],
       child: Builder(
         builder: (BuildContext context){

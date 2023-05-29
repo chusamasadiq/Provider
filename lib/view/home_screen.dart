@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:state_management/view/favourite_screen.dart';
+import 'package:state_management/view/loign_screen.dart';
 import 'package:state_management/view/slider.dart';
 import 'package:state_management/view/statless_screen.dart';
 import 'package:state_management/view/switch_screen.dart';
@@ -99,6 +100,19 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             },
             child: const Text('Go to Theme Switch Page'),
+          ),
+
+
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LoginScreen(),
+                ),
+              );
+            },
+            child: const Text('Login API Through Provider'),
           ),
 
         ],
